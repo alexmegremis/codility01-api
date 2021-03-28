@@ -6,12 +6,12 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping("/api/v1")
 public class Controller {
 
-    private final CitiesProvider citiesProvider;
+    private final CitiesCountProvider countProvider;
 
-    public Controller(final CitiesProvider citiesProvider) {this.citiesProvider = citiesProvider;}
+    public Controller(final CitiesCountProvider countProvider) {this.countProvider = countProvider;}
 
     @GetMapping("count/{prefix}")
     public Integer getCount(@PathVariable(name = "prefix") final String prefix) {
-        return citiesProvider.getCount(prefix);
+        return countProvider.getCount(prefix);
     }
 }
