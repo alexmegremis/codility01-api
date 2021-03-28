@@ -10,8 +10,8 @@ public class Controller {
 
     public Controller(final CitiesProvider citiesProvider) {this.citiesProvider = citiesProvider;}
 
-    @GetMapping("count/{initial}")
-    public Integer getCount(@PathVariable(name = "initial") final char initial) {
-        return citiesProvider.getCount(initial);
+    @GetMapping("count/{prefix}")
+    public Integer getCount(@PathVariable(name = "prefix") final String prefix) {
+        return citiesProvider.getCount(prefix);
     }
 }

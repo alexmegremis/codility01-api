@@ -1,6 +1,6 @@
 package com.alexmegremis.challenge.api.v1;
 
+@FunctionalInterface
 public interface CitiesProvider {
-
-    Integer getCount(Character e);
+    Integer getCount(String e);
 }
