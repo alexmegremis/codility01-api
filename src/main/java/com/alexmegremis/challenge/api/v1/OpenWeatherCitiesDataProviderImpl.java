@@ -18,8 +18,7 @@ public class OpenWeatherCitiesDataProviderImpl implements CitiesDataProvider {
     @Getter
     private List<String> cities;
 
-    @PostConstruct
-    private void init() {
+    public OpenWeatherCitiesDataProviderImpl() {
         WebClient.create(URL).get().retrieve().bodyToFlux(CitiesResponseDTO.class).subscribe(this :: handleResponse);
     }
 
